@@ -1,6 +1,7 @@
 let drumbeat = new Audio("./drumbeat2.wav");
 let osc = new Audio("./osc3.wav");
 let mallet = new Audio("./mallet2.wav");
+let synth = new Audio("./synth.wav");
 let wrong = new Audio("./wrong2.wav");
 
 let instruments = document.querySelectorAll(".instrument");
@@ -72,6 +73,7 @@ function drop (e) {
 	validateInstrument(e, "drum", drumbeat);
 	validateInstrument(e, "osc", osc);
 	validateInstrument(e, "mallet", mallet);
+	validateInstrument(e, "synth", synth);
 
 	let correctDrop = document.querySelectorAll(".correct");
 	let instrumentTotal = document.querySelectorAll(".instrument");
