@@ -15,12 +15,23 @@ function dragStart(e) {
 
 let instrumentContainers = document.querySelectorAll(".instrument-container"); 
 
+
 instrumentContainers.forEach(instrumentContainer => {
+	console.log(instrumentContainer);
 	instrumentContainer.addEventListener("dragenter", dragEnter);	
 	instrumentContainer.addEventListener("dragover", dragOver);	
 	instrumentContainer.addEventListener("dragleave", dragLeave);	
 	instrumentContainer.addEventListener("drop", drop);	
 });
+/*
+instrumentContainersHeader.forEach(instrumentContainerHeader => {
+	instrumentContainerHeader.removeEventListener("dragenter", dragEnter);	
+	instrumentContainerHeader.removeEventListener("dragover", dragOver);	
+	instrumentContainerHeader.removeEventListener("dragleave", dragLeave);	
+	instrumentContainerHeader.removeEventListener("drop", drop);	
+});
+*/
+
 
 function dragEnter(e){
 	e.preventDefault();	

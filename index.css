@@ -33,17 +33,22 @@ button {
 
 }
 
-.instrument-wrapper {
+.container-wrapper {
 	display: flex;
+}
+
+.instrument-wrapper {
+	display: block;
+	width: calc(33% - 1em);
+	margin-right: 1em;
+	min-height: 10em;
 }
 
 .instrument-container {
 	display: block;
-	margin-right: 1em;
 	padding: .8em 1em;
 	border: 1px solid #000;
-	min-height: 7em;
-	width: calc(33% - 1em);
+	min-height: 10em;
 	/* text-transform: uppercase; */ 
 }
 
