@@ -1,6 +1,15 @@
 :root {
 	box-sizing: border-box;
+	font-size: .875em;
+}
 
+body {
+	background-color: #ccc;
+	font-family: Helvetica, Sans-serif;
+}
+
+body * + * {
+	margin-top: 1.5em;
 }
 
 *,
@@ -8,3 +17,54 @@
 ::after {
 	box-sizing: inherit;
 }
+
+.container {
+	background-color: #fff;
+	padding: 1em;
+
+}
+
+.unarranged-container {
+	min-height: 10em;
+}
+
+.container-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	min-height: 15em;
+}
+
+.instrument {
+	margin-top: 0;
+}
+
+.instrument-wrapper {
+	margin-top: 0;
+	display: inline-block;
+}
+
+.instrument-container {
+	border: 1px solid #000;
+	min-width: 30vw;
+	min-height: 8em;
+	padding: 1em;
+}
+
+.instrument-wrapper + .instrument-wrapper {
+	margin-left: .7em;
+}
+
+.instrument-img {
+	min-width: 12vmin;
+}
+
+.drag-over {
+	border: 1px dashed #000;
+}
+
+@media(min-width: 1024px) {
+	.instrument-container {
+		min-width: 20vw;
+	}
+}	
+
