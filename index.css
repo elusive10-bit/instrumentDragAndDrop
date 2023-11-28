@@ -18,6 +18,10 @@ body * + * {
 	box-sizing: inherit;
 }
 
+button {
+	border: none;
+}
+
 .container {
 	background-color: #fff;
 	padding: 1em;
@@ -36,6 +40,8 @@ body * + * {
 
 .instrument {
 	margin-top: 0;
+	background-color: #375d6bff;
+	padding: 1em;
 }
 
 .instrument-wrapper {
