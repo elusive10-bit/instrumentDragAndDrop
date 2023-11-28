@@ -1,74 +1,10 @@
 :root {
-	font-size: 1.1em;
-}
-
-body {
-	background-color: #3D3C3A;
-	font-family: Helvetica, Sans-serif;
-}
-
-h1 {
-	font-size: 1.1em;
-}
-
-button {
-	min-width: 11vw;
-	max-width: 14vw;
-	margin: 0 1em 1em 0;
-	padding: 2em 1.5em;
-	font-size: 1em;
-	background-color: #375d6bff;
-	color: #fff;
-	border: none;
-}
-
-.container {
-	margin-bottom: 1em;
-	padding: 1em 1.5em;
-	/* border: 1px solid #000; */
-	background-color: #fff;
-	/* text-align: center; */
-	border-radius: .2em;
-	min-height: 14em;
+	box-sizing: border-box;
 
 }
 
-.container-wrapper {
-	display: flex;
-}
-
-.instrument-wrapper {
-	display: block;
-	width: calc(33% - 1em);
-	margin-right: 1em;
-	min-height: 10em;
-}
-
-.instrument-container {
-	display: block;
-	padding: .8em 1em;
-	border: 1px solid #000;
-	min-height: 10em;
-	/* text-transform: uppercase; */ 
-}
-
-.instrument-img {
-	min-width: 6vw;
-}
-
-.drag-over {
-	border: 1px dashed #000;
-	background-color: #ccc;	
-}
-
-.correct {
-	background-color: #7BCCB5;
-	color: #fff;
-	border: none;
-	font-weight: 400;
-}
-
-.wrong {
-	background-color: #CC7A92;
-	color: #fff;
+*,
+::before,
+::after {
+	box-sizing: inherit;
 }
