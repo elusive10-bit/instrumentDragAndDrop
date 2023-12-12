@@ -4,6 +4,14 @@ let mallet = new Audio("./mallet2.wav");
 let synth = new Audio("./synth.wav");
 let wrong = new Audio("./wrong2.wav");
 
+let instrumentList = [
+	drumbeat,
+	osc,
+	mallet,
+	synth,
+	wrong
+];
+
 let instruments = document.querySelectorAll(".instrument");
 
 instruments.forEach(instrument => {
@@ -18,7 +26,6 @@ let instrumentContainers = document.querySelectorAll(".instrument-container");
 
 
 instrumentContainers.forEach(instrumentContainer => {
-	console.log(instrumentContainer);
 	instrumentContainer.addEventListener("dragenter", dragEnter);	
 	instrumentContainer.addEventListener("dragover", dragOver);	
 	instrumentContainer.addEventListener("dragleave", dragLeave);	
@@ -48,7 +55,13 @@ function dragLeave(e) {
 	e.preventDefault();
 	e.target.classList.remove("drag-over");
 }
+function pauseOtherInstruments(instrument) {
+	instrumentList.forEach(instrument => {
+		instrument.pause();
+	});
 
+
+}
 function validateInstrument(e, instrument, beat) {
 	let id = e.dataTransfer.getData("text/plain");
 	let draggable = document.getElementById(id);
@@ -56,11 +69,13 @@ function validateInstrument(e, instrument, beat) {
 
 	if(container === `${instrument}-container`) {
 		if(draggable.id == `${instrument}`) {
+			pauseOtherInstruments();
 			beat.play();
+
 			e.target.appendChild(draggable);
-			draggable.addEventListener("click", () => { beat.play() });
 			e.target.classList.add("correct");
 		} else {
+			pauseOtherInstruments();
 			wrong.play();
 			alert("wrong container");
 		}
@@ -82,8 +97,11 @@ function drop (e) {
 
 	if(correctDrop.length === instrumentTotal.length) {
 		instrumentCountHeader.innerHTML = "No more instruments";
+		unarrangedContainer.classList.add("animate-unarranged-container");
+		/*
 		instrumentCountHeader.style.color = "#fff";
 		unarrangedContainer.style.backgroundColor = "#7BCCB5";
+		*/
 	}
 }
 

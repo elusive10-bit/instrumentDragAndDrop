@@ -4,44 +4,46 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="index.css"/>
-		<title>launchpad</title>
+		<title>Instrument Drag and Drag app</title>
 	</head>
 	<body>
-		<section class="unarranged-container container">
-			<h1 class="instrumentCount">Put instruments inside right containers</h1>
-			<button draggable="true" class="instrument" id="drum"><img draggable="false" src="drum-img.svg" class="instrument-img"/></button>
+		<section class="main-container">
+			<section class="unarranged-container container">
+				<h1 class="instrumentCount">Put instruments inside right containers</h1>
+				<button draggable="true" class="instrument" id="drum"><img draggable="false" src="drum-img.svg" class="instrument-img"/></button>
 
-			<button draggable="true" class="instrument" id="osc"><img draggable="false" src="lsc-img.svg" class="instrument-img"/></button>
-			<button draggable="true" class="instrument" id="mallet"><img draggable="false" src="mallet.svg" class="instrument-img"/></button>
-			<button draggable="true" class="instrument" id="synth"><img draggable="false" src="synth.svg" class="instrument-img"/></button>
-		</section>
-
-		<section class="container-wrapper container">
-
-			<section class="instrument-wrapper">
-				<h1>Drum</h1>
-				<section class="instrument-container drum-container" id="drum-container">
-				</section>
-			</section>
-			
-			<section class="instrument-wrapper">
-				<h1>Osc</h1>
-				<section class="instrument-container osc-container" id="osc-container">
-				</section>
-			</section>
-			<section class="instrument-wrapper">
-				<h1>Mallet</h1>
-				<section class="instrument-container mallet-container" id="mallet-container">
-				</section>
+				<button draggable="true" class="instrument" id="osc"><img draggable="false" src="lsc-img.svg" class="instrument-img"/></button>
+				<button draggable="true" class="instrument" id="mallet"><img draggable="false" src="mallet.svg" class="instrument-img"/></button>
+				<button draggable="true" class="instrument" id="synth"><img draggable="false" src="synth.svg" class="instrument-img"/></button>
 			</section>
 
-			<section class="instrument-wrapper">
-				<h1>Synth</h1>
-				<section class="instrument-container synth-container" id="synth-container">
+			<section class="container-wrapper container">
+
+				<section class="instrument-wrapper">
+					<h1>Drum</h1>
+					<section class="instrument-container drum-container" id="drum-container">
+					</section>
+				</section>
+				
+				<section class="instrument-wrapper">
+					<h1>Osc</h1>
+					<section class="instrument-container osc-container" id="osc-container">
+					</section>
+				</section>
+				<section class="instrument-wrapper">
+					<h1>Mallet</h1>
+					<section class="instrument-container mallet-container" id="mallet-container">
+					</section>
+				</section>
+
+				<section class="instrument-wrapper">
+					<h1>Synth</h1>
+					<section class="instrument-container synth-container" id="synth-container">
+					</section>
+
 				</section>
 			</section>
-		</section>
-		
+		</section>	
 			
 				
 		<script src="index.js"></script>
