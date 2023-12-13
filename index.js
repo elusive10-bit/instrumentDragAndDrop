@@ -24,22 +24,12 @@ function dragStart(e) {
 
 let instrumentContainers = document.querySelectorAll(".instrument-container"); 
 
-
 instrumentContainers.forEach(instrumentContainer => {
 	instrumentContainer.addEventListener("dragenter", dragEnter);	
 	instrumentContainer.addEventListener("dragover", dragOver);	
 	instrumentContainer.addEventListener("dragleave", dragLeave);	
 	instrumentContainer.addEventListener("drop", drop);	
 });
-/*
-instrumentContainersHeader.forEach(instrumentContainerHeader => {
-	instrumentContainerHeader.removeEventListener("dragenter", dragEnter);	
-	instrumentContainerHeader.removeEventListener("dragover", dragOver);	
-	instrumentContainerHeader.removeEventListener("dragleave", dragLeave);	
-	instrumentContainerHeader.removeEventListener("drop", drop);	
-});
-*/
-
 
 function dragEnter(e){
 	e.preventDefault();	
@@ -59,8 +49,6 @@ function pauseOtherInstruments(instrument) {
 	instrumentList.forEach(instrument => {
 		instrument.pause();
 	});
-
-
 }
 function validateInstrument(e, instrument, beat) {
 	let id = e.dataTransfer.getData("text/plain");
@@ -71,7 +59,8 @@ function validateInstrument(e, instrument, beat) {
 		if(draggable.id == `${instrument}`) {
 			pauseOtherInstruments();
 			beat.play();
-
+			draggable.classList.add("instrument-correct");
+			draggable.draggable = false;
 			e.target.appendChild(draggable);
 			e.target.classList.add("correct");
 		} else {
@@ -96,12 +85,8 @@ function drop (e) {
 	let unarrangedContainer = document.querySelector(".unarranged-container");
 
 	if(correctDrop.length === instrumentTotal.length) {
-		instrumentCountHeader.innerHTML = "No more instruments";
+		instrumentCountHeader.innerHTML = "No more instruments, Thanks for arranging them :)";
 		unarrangedContainer.classList.add("animate-unarranged-container");
-		/*
-		instrumentCountHeader.style.color = "#fff";
-		unarrangedContainer.style.backgroundColor = "#7BCCB5";
-		*/
 	}
 }
 

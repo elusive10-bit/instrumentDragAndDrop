@@ -1,10 +1,11 @@
 :root {
 	box-sizing: border-box;
 	font-size: .875em;
+	--correct: #7BCCB5;
 }
 
 body {
-	background-color: #3D3C3A;
+	background-color: #eee;
 	font-family: Helvetica, Sans-serif;
 }
 
@@ -22,6 +23,16 @@ button {
 	border: none;
 }
 
+.theme {
+	position: absolute;
+	right: 0;
+	margin-right: 10px;
+}
+
+.dark {
+	background-color: #344954ff;
+}
+
 .main-container {
 	max-width: 960px;
 	margin: 0 auto;
@@ -30,11 +41,12 @@ button {
 .container {
 	background-color: #fff;
 	padding: 1em;
+	box-shadow: 1px 1px 3px 3px 2px #ccc;
 
 }
 
 .animate-unarranged-container {
-	animation: empty-container .5s cubic-bezier(0, 0.38, 0.52, 0.85) ;
+	animation: empty-container 1s cubic-bezier(0, 0.38, 0.52, 0.85) ;
 	color: #fff;
 	background-color: #7BCCB5;
 }
@@ -55,6 +67,18 @@ button {
 	background-color: #375d6bff;
 	padding: 1em;
 	min-height: 8em;
+	transition-property: all;
+	transition-duration: .3s;
+}
+
+.instrument-correct {
+	background-color: #375d6bff;
+	border: var(--correct);
+}
+
+.instrument:hover {
+	background-color: #247b9aff;
+
 }
 
 .instrument-wrapper {
@@ -64,10 +88,14 @@ button {
 
 .instrument-container {
 	border: 1px solid #000;
-	min-width: 30vw;
-	min-height: 10em;
 	padding: 1em;
-	align: center;
+	min-width: 40vw;
+	min-height: 9em;
+}
+
+.correct {
+	background-color: #7BCCB5;
+	border: 1px solid var(--correct);
 }
 
 .instrument-wrapper {
@@ -91,6 +119,10 @@ button {
 	0% {
 		color: #000;
 		background-color: #fff;
+	}
+
+	25% {
+		background-color: #375d6bff;
 	}
 
 	100% {
