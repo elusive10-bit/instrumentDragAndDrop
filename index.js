@@ -4,6 +4,25 @@ let mallet = new Audio("./mallet2.wav");
 let synth = new Audio("./synth.wav");
 let wrong = new Audio("./wrong2.wav");
 
+let themeSwitcher = document.querySelector(".theme");
+let themeLogo = document.querySelector(".theme-logo");
+let body = document.querySelector("body");
+themeSwitcher.addEventListener("click", () => {
+	console.log(themeSwitcher.innerHTML);
+
+	console.log(themeLogo.getAttribute("alt"));
+	console.log(themeLogo.getAttribute("src"));
+	if(themeLogo.getAttribute("alt") === "dark") {
+		themeLogo.setAttribute("src", "light.svg");
+		themeLogo.setAttribute("alt", "light");
+		body.classList.add("dark");
+	} else {
+		themeLogo.setAttribute("src", "darkness.svg");
+		themeLogo.setAttribute("alt", "dark");
+		body.classList.remove("dark");
+	}
+});
+
 let instrumentList = [
 	drumbeat,
 	osc,
@@ -85,7 +104,7 @@ function drop (e) {
 	let unarrangedContainer = document.querySelector(".unarranged-container");
 
 	if(correctDrop.length === instrumentTotal.length) {
-		instrumentCountHeader.innerHTML = "No more instruments, Thanks for arranging them :)";
+		instrumentCountHeader.innerHTML = "No more instruments. Thanks for arranging them! :)";
 		unarrangedContainer.classList.add("animate-unarranged-container");
 	}
 }

@@ -29,6 +29,10 @@ button {
 	margin-right: 10px;
 }
 
+.theme-logo {
+	width: 3em;
+}
+
 .dark {
 	background-color: #344954ff;
 }
