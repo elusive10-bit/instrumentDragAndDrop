@@ -11,5 +11,7 @@ please clone the sourcecode or download the zip, extract and run the index HTML.
 1. Sound on correct drop and other events
 1. Theme Switcher
 
+## Art assets and audio assets made by myself created/edited on inkscape(art assets) and lmms(audio assets)
+
 ### Mobile drag and drop is still not functional, 
 ### still thinking of a way to implement that
