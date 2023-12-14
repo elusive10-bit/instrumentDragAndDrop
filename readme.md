@@ -1,0 +1,15 @@
+# Instrument Drag and Drop app
+
+please clone the sourcecode or download the zip, extract and run the index HTML.
+
+## Technologies included:
+1. Plain HTML, CSS, and Javascript (didn't use any framework to deepen my knowledge on these)
+* could make another version of this project using frameworks in later versions
+
+## features include:
+1. Drag and Drop 
+1. Sound on correct drop
+1. Theme Switcher
+
+### Mobile drag and drop is still not functional, 
+### still thinking of a way to implement that

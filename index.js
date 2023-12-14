@@ -2,16 +2,28 @@ let drumbeat = new Audio("./drumbeat2.wav");
 let osc = new Audio("./osc3.wav");
 let mallet = new Audio("./mallet2.wav");
 let synth = new Audio("./synth.wav");
-let wrong = new Audio("./wrong2.wav");
+let wrong = new Audio("./wrong.wav");
+let switchThemeAudio = new Audio("./switchTheme.wav");
+
+let instrumentList = [
+	drumbeat,
+	osc,
+	mallet,
+	synth,
+	wrong
+];
 
 let themeSwitcher = document.querySelector(".theme");
 let themeLogo = document.querySelector(".theme-logo");
 let body = document.querySelector("body");
+
 themeSwitcher.addEventListener("click", () => {
 	console.log(themeSwitcher.innerHTML);
 
 	console.log(themeLogo.getAttribute("alt"));
 	console.log(themeLogo.getAttribute("src"));
+	switchThemeAudio.play();
+
 	if(themeLogo.getAttribute("alt") === "dark") {
 		themeLogo.setAttribute("src", "light.svg");
 		themeLogo.setAttribute("alt", "light");
@@ -22,14 +34,6 @@ themeSwitcher.addEventListener("click", () => {
 		body.classList.remove("dark");
 	}
 });
-
-let instrumentList = [
-	drumbeat,
-	osc,
-	mallet,
-	synth,
-	wrong
-];
 
 let instruments = document.querySelectorAll(".instrument");
 
@@ -79,6 +83,7 @@ function validateInstrument(e, instrument, beat) {
 			pauseOtherInstruments();
 			beat.play();
 			draggable.classList.add("instrument-correct");
+			draggable.setAttribute("disabled", "true");
 			draggable.draggable = false;
 			e.target.appendChild(draggable);
 			e.target.classList.add("correct");
