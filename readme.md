@@ -8,7 +8,7 @@ please clone the sourcecode or download the zip, extract and run the index HTML.
 
 ## features include:
 1. Drag and Drop 
-1. Sound on correct drop
+1. Sound on correct drop and other events
 1. Theme Switcher
 
 ### Mobile drag and drop is still not functional, 
